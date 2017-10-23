@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
@@ -37,6 +38,7 @@ end
 group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :development do
