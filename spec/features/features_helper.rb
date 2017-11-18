@@ -1,4 +1,8 @@
+require 'rails_helper'
+
 RSpec.configure do |config|
+  config.use_transactional_fixtures = false
+  config.include AcceptanceHelpers, type: :feature
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
