@@ -32,8 +32,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-  gem 'geckodriver-helper'
+  gem 'capybara-webkit'
   gem 'rails-controller-testing'
 end
 
