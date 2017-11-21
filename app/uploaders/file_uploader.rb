@@ -1,8 +1,5 @@
 class FileUploader < CarrierWave::Uploader::Base
-
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  delegate :identifier, to: :file
   storage :file
 
   def store_dir
