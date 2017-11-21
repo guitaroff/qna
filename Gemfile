@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'slim-rails'
 gem 'devise'
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
