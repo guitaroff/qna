@@ -6,10 +6,9 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.save
-        format.html { render partial: 'questions/answers', layout: false }
-        format.json { render json: @answer }
+        format.js
       else
-        format.json { render json: @answer.errors.full_messages, status: :unprocessable_entity }
+        format.js
       end
     end
   end
