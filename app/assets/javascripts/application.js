@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require jquery
 //= require jquery_ujs
+//= require private_pub
 //= require jquery.remotipart
 //= require turbolinks
 //= require_tree .
