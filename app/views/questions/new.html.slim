@@ -7,7 +7,7 @@
     = f.text_area :body
   .question_form_attachments
     = 'Attachments:'
-    = f.fields_for :attachments do |a|
+    = f.fields_for :attachments, @question.attachments.build do |a|
       = a.label :file
       = a.file_field :file
   = f.submit 'Create'
