@@ -30,6 +30,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'remotipart', '~> 1.2'
 gem 'private_pub'
 gem 'thin'
+gem 'responders'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
