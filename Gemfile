@@ -31,6 +31,8 @@ gem 'remotipart', '~> 1.2'
 gem 'private_pub'
 gem 'thin'
 gem 'responders'
+gem 'omniauth'
+gem 'omniauth-vkontakte'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
