@@ -1,4 +1,4 @@
-class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def vkontakte
     @user = User.find_for_oauth(request.env['omniauth.auth'])
     if @user.persisted?
