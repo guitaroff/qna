@@ -1,0 +1,15 @@
+production:
+  vkontakte_id: ''
+  vkontakte_secret: ''
+
+staging:
+  vkontakte_id: ''
+  vkontakte_secret: ''
+
+development:
+  vkontakte_id: ''
+  vkontakte_secret: ''
+
+test:
+  vkontakte_id: ''
+  vkontakte_secret: ''
