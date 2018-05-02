@@ -1,3 +1,6 @@
+module Omniauth
+  CONFIG = YAML.load_file(File.join(Rails.root, 'config', 'omniauth.yml'))[Rails.env]
+end
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -250,7 +253,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :vkontakte, '', '', { scope: 'email', lang: 'ru' }
+  config.omniauth :vkontakte, Omniauth::CONFIG['vkontakte_id'], Omniauth::CONFIG['vkontakte_secret'], { scope: 'email', lang: 'ru' }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
