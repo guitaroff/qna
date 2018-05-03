@@ -1,5 +1,6 @@
-p = link_to 'Ask question', new_question_path
-br
+- if can?(:create, Question)
+  p = link_to 'Ask question', new_question_path
+  br
 ol
   = 'Список вопросов:'
   - @questions.each do |question|

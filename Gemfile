@@ -33,6 +33,7 @@ gem 'thin'
 gem 'responders'
 gem 'omniauth'
 gem 'omniauth-vkontakte'
+gem 'cancancan', '~> 2.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
