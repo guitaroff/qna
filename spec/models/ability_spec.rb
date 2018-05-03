@@ -24,5 +24,9 @@ RSpec.describe Ability do
 
     it { should_not be_able_to :manage, :all }
     it { should be_able_to :read, :all }
+
+    it { should be_able_to :create, Question }
+    it { should be_able_to :create, Answer }
+    it { should be_able_to :create, Comment }
   end
 end
