@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :validatable, :omniauthable, omniauth_providers: [:vkontakte]
 
   has_many :identities
+  has_many :questions
+  has_many :answers
 
   def self.find_for_oauth(auth)
     identity = Identity.where(provider: auth.provider, uid: auth.uid.to_s).first
