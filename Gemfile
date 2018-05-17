@@ -34,10 +34,11 @@ gem 'responders'
 gem 'omniauth'
 gem 'omniauth-vkontakte'
 gem 'cancancan', '~> 2.0'
+gem 'doorkeeper'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'capybara-webkit'
