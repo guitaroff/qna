@@ -66,7 +66,7 @@ Doorkeeper.configure do
   # falls back to the `:access_token` or `:bearer_token` params from the `params` object.
   # Check out https://github.com/doorkeeper-gem/doorkeeper/wiki/Changing-how-clients-are-authenticated
   # for more information on customization
-  # access_token_methods :from_bearer_authorization, :from_access_token_param, :from_bearer_param
+  access_token_methods :from_bearer_authorization, :from_access_token_param, :from_bearer_param
 
   # Change the native redirect uri for client apps
   # When clients register with the following redirect uri, they won't be redirected to any server and the authorization code will be displayed within the provider
@@ -111,9 +111,7 @@ Doorkeeper.configure do
   #   http://tools.ietf.org/html/rfc6819#section-4.4.2
   #   http://tools.ietf.org/html/rfc6819#section-4.4.3
   #
-  # grant_flows %w[authorization_code client_credentials]
-
-  grant_flows %w[authorization_code]
+  grant_flows %w[authorization_code client_credentials]
 
   # Hook into the strategies' request & response life-cycle in case your
   # application needs advanced customization or logging:
