@@ -20,12 +20,30 @@ describe 'Profile API' do
 
     context 'authorized' do
       let(:me) { create(:user) }
-      let(:access_token) { create(:access_token) }
+      let!(:application) { Doorkeeper::Application.create!(name: 'Test', redirect_uri: 'urn:ietf:wg:oauth:2.0:oob', uid: '123456789', secret: '987654321') }
+      let!(:access_token) { Doorkeeper::AccessToken.create!(application_id: application.id, resource_owner_id: me.id, scopes: 'public') }
       
+      before { get '/api/v1/profiles/me', params: { format: :json, access_token: access_token.token } }
+
       it 'returns 200 status' do
-        #puts "access_token: #{access_token}"
-        get '/api/v1/profiles/me', params: { format: :json, access_token: access_token.token }
+        puts "BODY: #{response.body}"
         expect(response).to be_success
+      end
+
+      it 'contains email' do
+        expect(response.body).to be_json_eql(me.email.to_json).at_path('email')
+      end
+
+      it 'contains id' do
+        expect(response.body).to be_json_eql(me.id.to_json).at_path('id')
+      end
+
+      it 'does not contain password' do
+        expect(response.body).to_not have_json_path('password')
+      end
+
+      it 'does not contain encrypted_password' do
+        expect(response.body).to_not have_json_path('encrypted_password')
       end
     end
   end

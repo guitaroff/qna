@@ -49,6 +49,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'json_spec'
 end
 
 group :development do
