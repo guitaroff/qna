@@ -17,9 +17,10 @@ Rails.application.routes.draw do
   # api
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      resource :profiles do
+      resource :profiles, only: [] do
         get :me, on: :collection
       end
+      resources :questions, only: :index
     end
   end
 
